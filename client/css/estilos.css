@@ -1,0 +1,16 @@
+.faixa {
+	background: #bbbbbb;
+	border: 1px solid #000000;
+	border-radius: 5px;
+}
+
+.table-view {
+	border: 1px solid #000000;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.container {
+	border: 1px solid #000000;
+	border-radius: 5px;
+}
