@@ -1,16 +1,32 @@
-/* Código simplório, apenas para fornecer o serviço para a aplicação */
+const Compra = require('../models/Compra');
 
-var api = require('../api');
+module.exports = app => {
+    app.get('/registros', (req, res) => {
+        Compra.lista(res)
+    })
 
-module.exports  = function(app) {
-    
-    app.route('/produtos/semana')
-        .get(api.listaSemana);
-        
-    app.route('/produtos/anterior')
-        .get(api.listaAnterior);
-        
-    app.route('/produtos/retrasada')
-        .get(api.listaRetrasada);  
-        
-};
+    app.get('/registros/:id', (req, res) => {
+        const id = parseInt(req.params.id)
+
+        Compra.buscaPorId(id, res)
+    })
+
+    app.post('/registros', (req, res) => {
+       const compra = req.body;
+
+        Compra.adiciona(compra, res)
+    }) 
+
+    app.patch('/registros/:id', (req, res) => {
+        const id = parseInt(req.params.id)
+        const valores = req.body;
+
+        Compra.altera(id, valores, res)
+    })
+
+    app.delete('/registros/:id', (req, res) => {
+        const id = parseInt(req.params.id);
+
+        Compra.deleta(id, res);
+    })
+}
