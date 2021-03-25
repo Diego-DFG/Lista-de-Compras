@@ -10,10 +10,11 @@ class Tabela {
             id int NOT NULL AUTO_INCREMENT,
             _data datetime NOT NULL,
             _semana varchar(20) NOT NULL,
+            _mercado varchar(20) NOT NULL,
             _item varchar(50) NOT NULL,
-            _quantidade int NOT NULL,
-            _valor int NOT NULL,
-            _total int NOT NULL,
+            _quantidade numeric NOT NULL,
+            _valor numeric NOT NULL,
+            _total numeric NOT NULL,
             PRIMARY KEY(id)
         )`;
 
