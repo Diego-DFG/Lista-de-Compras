@@ -1,71 +1,273 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de compras</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.css">
-    <link rel="stylesheet" href="css/estilos.css">
-    
-</head>
-<body class="container">
-    
-    <h1 class="text-center faixa">Lista de compras</h1>
-    
-    <div id="mensagemView"></div>
-    
-    <form class="form" onsubmit="produtosController.adiciona(event)">
-        
-        <div class="form-group">
-            <label for="data">Data</label>
-            <input type="date" id="data" class="form-control" required autofocus/>        
-        </div>    
-        
-        <div class="form-group">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" class="form-control" required/>        
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shop Manager</title>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
+        crossorigin="anonymous">
+        <!-- Estilos css -->
+        <link rel="stylesheet" href="css/estilos.css">
+         <!-- Font Awesome -->
+         <script src="./js/fontawesome-all.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <nav class="navegacao">
+                <div class="logo">
+                    <span>ShopManager</span>
+                </div>
+            </nav>
+            <div class="conteudo">
+                <div class="periodo">
+                    <h1>PERÍODO</h1>
+                    <div class="periodo_meses">
+                        <tr>
+                            <td><a href="#" onclick="tarefaController.importaRegistrosJaneiro()">Janeiro</a></td>
+                            <input type="number" id="periodo_dia_janeiro" class="periodo_dia"/>
+                            <button onclick="registroDiarioJaneiroController.importaRegistros()" class="btn-inserirDia" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </tr>
+                        <tr>
+                            <td><a href="#" onclick="tarefaController.importaRegistrosFevereiro()">Fevereiro</a></td>
+                            <input type="number" id="periodo_dia_fevereiro" class="periodo_dia"/>
+                            <button onclick="registroDiarioFevereiroController.importaRegistros()" class="btn-inserirDia" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        <tr>
+                            <td><a href="#" onclick="tarefaController.importaRegistrosMarco()">Março</a></td>
+                            <input type="number" id="periodo_dia_marco"  class="periodo_dia"/>
+                            <button onclick="registroDiarioMarcoController.importaRegistros()" class="btn-inserirDia" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </tr>
+                        <tr>
+                            <td><a href="#" onclick="tarefaController.importaRegistrosAbril()">Abril</a></td>
+                            <input type="number" id="periodo_dia_abril" class="periodo_dia" />
+                            <button onclick="registroDiarioAbrilController.importaRegistros()" class="btn-inserirDia" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </tr>
+                        <tr>
+                            <td >
+                                <td><a href="#" onclick="tarefaController.importaRegistrosAbril()">Maio</a></td>
+                                <input type="number" id="periodo_dia_maio" class="periodo_dia" />
+                                <button onclick="registroDiarioMaioController.importaRegistros()" class="btn-inserirDia" type="button">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" onclick="tarefaController.importaRegistrosJunho()">Junho</a></td>
+                            <input type="number" id="periodo_dia_junho" class="periodo_dia" />
+                            <button onclick="registroDiarioJunhoController.importaRegistros()" class="btn-inserirDia" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </tr>
+                        <tr>
+                            <td><a href="#" onclick="tarefaController.importaRegistrosJulho()">Julho</a></td>
+                            <input type="number" id="periodo_dia_julho" class="periodo_dia" />
+                            <button onclick="registroDiarioJulhoController.importaRegistros()" class="btn-inserirDia" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </tr>
+                        <tr>
+                            <td><a href="#" onclick="tarefaController.importaRegistrosAgosto()">Agosto</a></td>
+                            <input type="number" id="periodo_dia_agosto" class="periodo_dia" />
+                            <button onclick="registroDiarioAgostoController.importaRegistros()" class="btn-inserirDia" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </tr>
+                        <tr>
+                            <td><a href="#" onclick="tarefaController.importaRegistrosSetembro()">Setembro</a></td>
+                            <input type="number" id="periodo_dia_setembro" class="periodo_dia" />
+                            <button onclick="registroDiarioSetembroController.importaRegistros()" class="btn-inserirDia" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </tr>
+                        <tr>
+                            <td><a href="#" onclick="tarefaController.importaRegistrosOutubro()">Outubro</a></td>
+                            <input type="number" id="periodo_dia_outubro" class="periodo_dia" />
+                            <button onclick="registroDiarioOutubroController.importaRegistros()" class="btn-inserirDia" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </tr>
+                        <tr>
+                            <td><a href="#" onclick="tarefaController.importaRegistrosNovembro()">Novembro</a></td>
+                            <input type="number" id="periodo_dia_novembro" class="periodo_dia" />
+                            <button onclick="registroDiarioNovrmbroController.importaRegistros()" class="btn-inserirDia" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </tr>
+                        <tr>
+                            <td><a href="#" onclick="tarefaController.importaRegistrosDezembro()">Dezembro</a></td>
+                            <input type="number" id="periodo_dia_dezembro" class="periodo_dia" />
+                            <button onclick="registroDiarioDezembroController.importaRegistros()" class="btn-inserirDia" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </tr>
+                    </div>
+                </div>
+                <div class="tarefas">
+                    <h1>COMPRAS DO PERÍODO</h1>
+                    <div id="mensagemView"></div>
+                    <form>
+                        <div id="tarefaView"></div>
+                        <button onclick="tarefaController.apaga()" class="btn btn-success" id="btn-apagar" type="button">
+                            Limpar
+                        </button>
+                    </form>
+                </div>
+                <div class="tabela_periodos">
+                    <form>
+                        <div class="tabela_conteudo">
+                            <h1>COMPRA</h1>
+                            <div class="semana">
+                                <div class="subCardSemana">
+                                    <div class="cardSemana">
+                                        <input class="input_semana" type="checkbox" value="Domingo" />
+                                        <span>D</span>
+                                    </div>
+                                    <div class="cardSemana">
+                                        <input class="input_semana" type="checkbox" value="Segunda" />
+                                        <span>S</span>
+                                    </div>
+                                    <div class="cardSemana">
+                                        <input class="input_semana" type="checkbox" value="Terça" />
+                                        <span>T</span>
+                                    </div>
+                                    <div class="cardSemana">
+                                        <input class="input_semana" type="checkbox" value="Quarta" />
+                                        <span>Q</span>
+                                    </div>
+                                    <div class="cardSemana">
+                                        <input class="input_semana" type="checkbox" value="Quinta" />
+                                        <span>Q</span>
+                                    </div>
+                                    <div class="cardSemana">
+                                        <input class="input_semana" type="checkbox" value="Sexta" />
+                                        <span>S</span>
+                                    </div>
+                                    <div class="cardSemana">
+                                        <input class="input_semana" type="checkbox" value="Sábado" />
+                                        <span>S</span>
+                                    </div>
+                                </div>
+                                <label id="label_semana"></label>
+                                <div class="cardData">
+                                    <input type="date" id="data" class="form-group">
+                                </div>
+                            </div>
+                            <div onclick="capturaInputEstudos()" id="card_estudos" class="card_estudos">
+                                <h4>MERCADO</h4>
+                                <div id="cardNotas" class="card_01 cardNotas">
+                                    <input type="text" id="input__Text_mercado" required />
+                                    <div id="checkEstudos" class="checkViewItems form-group"></div>
+                                </div>
+                            </div>
+                            <div onclick="capturaInputEstudos()" id="card_estudos" class="card_estudos">
+                                <h4>ITEM</h4>
+                                <div id="cardNotas" class="card_01 cardNotas">
+                                    <input type="text" id="input__Text_item" 
+                                    placeholder="Insira o item comprado" required />
+                                    <div id="checkEstudos" class="checkViewItems form-group"></div>
+                                </div>
+                            </div>
+                            <div onclick="capturaInputProjetos()" id="card_projetos" class="card_estudos">
+                                <h4>QUANTIDADE</h4>
+                                <div class="cardNotas">
+                                    <input type="number" value="0.0" id="input__Text_quantidade" required/>
+                                    <div id="checkProjetos" class="checkViewQuantidade form-group"></div>
+                                </div>
+                            </div>
+                            <div onclick="capturaInputPessoal()" id="card_pessoal" class="card_estudos">
+                                <h4>VALOR</h4>
+                                <div class="cardNotas">
+                                    <input type="number" value="0.0" id="input__Text_valor" required/>
+                                    <div id="checkPessoal" class="checkViewValor form-group"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="tarefaController.adiciona(event)" class="btn btn-secondary" id="btn-adicionar" type="submit">
+                            Incluir
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
 
-        <div class="form-group">
-            <label for="quantidade">Quantidade</label>
-            <input type="number" min="1" step="1" id="quantidade" class="form-control" value="1" required/>
-        </div>
-        
-        <div class="form-group">
-            <label for="valor">Valor</label>
-            <input id="valor" type="number" class="form-control"  min="0.01" step="0.01" value="0.0" required />
-        </div>
-        
-        <button class="btn btn-primary" type="submit">Incluir</button>
-    </form>
-    
-    <div class="text-center faixa">
-        <button onclick="produtosController.importaProdutos()" class="btn btn-primary text-center" type="button">
-            Importar Produtos
-        </button>
-        <button onclick="produtosController.remove()" class="btn btn-primary text-center" type="button">
-            Apagar
-        </button>
-    </div> 
-    <br>
-    <br>
-    
-    <div id="produtosView" class="table-view"></div>
-    
-   <script src="js/app/models/Produtos.js"></script>
-   <script src="js/app/controllers/ProdutosController.js"></script>
-   <script src="js/app/helpers/DateHelper.js"></script>
-   <script src="js/app/models/ListaProdutos.js"></script>
-   <script src="js/app/views/View.js"></script>
-   <script src="js/app/views/ProdutosView.js"></script>
-   <script src="js/app/models/Mensagem.js"></script>
-   <script src="js/app/views/MensagemView.js"></script>
-   <script src="js/app/services/ProxyFactory.js"></script>
-   <script src="js/app/helpers/Bind.js"></script>
-   <script src="js/app/services/ProdutosService.js"></script>
-   <script src="js/app/services/HttpService.js"></script>
-   <script>
-       let produtosController = new ProdutosController();
-   </script>
-</body>
+        <!----------- Jquery ------------------------------------------------------------>
+		<script src="https://code.jquery.com/jquery-3.5.1.js" 
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+        crossorigin="anonymous">
+        </script>
+
+        <!-- JS scripts -->
+        <script src='./js/app/models/Compra.js'></script>
+        <script src='./js/app/helpers/DateHelper.js'></script>
+        <script src='./js/app/helpers/checkbox-helper.js'></script>
+        <script src='./js/app/models/ArrayCompras.js'></script>
+        <script src='./js/app/controllers/TarefaController.js'></script>
+        <script src='./js/app/controllers/RegistroDiarioJaneiroController.js'></script>
+        <script src='./js/app/controllers/RegistroDiarioFevereiroController.js'></script>
+        <script src='./js/app/controllers/RegistroDiarioMarcoController.js'></script>
+        <script src='./js/app/controllers/RegistroDiarioAbrilController.js'></script>
+        <script src='./js/app/controllers/RegistroDiarioMaioController.js'></script>
+        <script src='./js/app/controllers/RegistroDiarioJunhoController.js'></script>
+        <script src='./js/app/controllers/RegistroDiarioJulhoController.js'></script>
+        <script src='./js/app/controllers/RegistroDiarioAgostoController.js'></script>
+        <script src='./js/app/controllers/RegistroDiarioSetembroController.js'></script>
+        <script src='./js/app/controllers/RegistroDiarioOutubroController.js'></script>
+        <script src='./js/app/controllers/RegistroDiarioNovembroController.js'></script>
+        <script src='./js/app/controllers/RegistroDiarioDezembroController.js'></script>
+        <script src='./js/app/views/CompraView.js'></script>
+        <script src='./js/app/models/Mensagem.js'></script>
+        <script src='./js/app/views/MensagemViewSucess.js'></script>
+        <script src='./js/app/views/MensagemViewError.js'></script>
+        <script src='./js/app/services/HttpService.js'></script>
+        <script src='./js/app/services/RegistrosService.js'></script>
+        <script src='./js/app/services/RegistrosDiarioService.js'></script>
+        <script>
+
+            let tarefaController = new TarefaController();
+            let registroDiarioJaneiroController = new RegistroDiarioJaneiroController();
+            let registroDiarioFevereiroController = new RegistroDiarioFevereiroController();
+            let registroDiarioMarcoController = new RegistroDiarioMarcoController();
+            let registroDiarioAbrilController = new RegistroDiarioAbrilController();
+            let registroDiarioMaioController = new RegistroDiarioMaioController();
+            let registroDiarioJunhoController = new RegistroDiarioJunhoController();
+            let registroDiarioJulhoController = new RegistroDiarioJulhoController();
+            let registroDiarioAgostoController = new RegistroDiarioAgostoController();
+            let registroDiarioSetembroController = new RegistroDiarioSetembroController();
+            let registroDiarioOutubroController = new RegistroDiarioOutubroController();
+            let registroDiarioNovembroController = new RegistroDiarioNovembroController();
+            let registroDiarioDezembroController = new RegistroDiarioDezembroController();
+
+            const botaoLimpar = document.querySelector('#btn-apagar');
+            botaoLimpar.addEventListener('click', function() {
+
+                tarefaController.apaga();
+
+                registroDiarioJaneiroController.apaga();
+                registroDiarioFevereiroController.apaga();
+                registroDiarioMarcoController.apaga();
+                registroDiarioAbrilController.apaga();
+                registroDiarioMaioController.apaga();
+                registroDiarioJunhoController.apaga();
+                registroDiarioJulhoController.apaga();
+                registroDiarioAgostoController.apaga();
+                registroDiarioSetembroController.apaga();
+                registroDiarioOutubroController.apaga();
+                registroDiarioNovembroController.apaga();
+                registroDiarioDezembroController.apaga();
+                
+
+            });
+
+        </script>
+    </body>
 </html>
