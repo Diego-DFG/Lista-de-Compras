@@ -54,6 +54,39 @@ class TarefaController {
 
     }
 
+	deletaRegistro(event) {
+
+		event.preventDefault();
+
+		let botaoDeletar = event.target;
+
+		if(botaoDeletar) {
+			if(confirm("Tem certeza que deseja excluir esta tarefa?")) {
+				const linhaTarefa = event.target.closest('[data-id]');
+				let id = linhaTarefa.dataset.id;
+
+				let registros = new RegistrosService();
+
+				registros
+					.excluiRegistros(id)
+					.then(()=> 
+						linhaTarefa.remove())
+					.then(mensagem => {
+						console.log(mensagem);
+						this._mensagem.texto = 'Tarefa deletada do banco com sucesso!';
+						this._mensagemViewSuccess.update(this._mensagem);
+					})
+					.catch(erro => {
+						console.log(erro);
+						this._mensagem.texto = 'Não foi possível deletar a tarefa!';
+						this._mensagemViewError.update(this._mensagem);
+					});
+
+					this._limpaFormulario();	
+			}
+		}
+	}
+
     importaRegistrosJaneiro() {
 
 		event.preventDefault();
@@ -110,7 +143,7 @@ class TarefaController {
 		let registros = new RegistrosService();
 
 		registros
-			.obterRegistrosMarço()
+			.obterRegistrosMarco()
 			.then(registros => {
 				console.log(registros);
 	            registros
@@ -370,10 +403,8 @@ class TarefaController {
 
         this._inputData.value = '';
         this._inputItem.value = '';
-		
         this._inputQuantidade.value = 0.0;
         this._inputValor.value = 0.0;
         this._inputData.focus();
-
     }
 }

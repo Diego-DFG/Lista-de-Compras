@@ -21,6 +21,8 @@ class RegistroDiarioAgostoController {
 
         event.preventDefault();
 
+        this._compras.esvazia();
+
         const dia = this._inputDiaAgosto.value;
 
         let listAll = dia => registros => {
@@ -38,193 +40,193 @@ class RegistroDiarioAgostoController {
                         this._mensagemViewError.update(this._mensagem);}
 
 
-        let registros = new RegistrosDiarioService();
+        let registros = new RegistrosService();
 
         if(dia == 1) {
             registros
-                .obterRegistrosDiaPrimeiro(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 2) {
             registros
-                .obterRegistrosDiaDois(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 3) {
             registros
-                .obterRegistrosDiaTres(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 4) {
             registros
-                .obterRegistrosDiaQuatro(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 5) {
             registros
-                .obterRegistrosDiaCinco(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 6) {
             registros
-                .obterRegistrosDiaSeis(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 7) {
             registros
-                .obterRegistrosDiaSete(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 8) {
             registros
-                .obterRegistrosDiaOito(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 9) {
             registros
-                .obterRegistrosDiaNove(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 10) {
             registros
-                .obterRegistrosDiaDez(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 11) {
             registros
-                .obterRegistrosDiaOnze(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 12) {
             registros
-                .obterRegistrosDiaDoze(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 13) {
             registros
-                .obterRegistrosDiaTreze(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 14) {
             registros
-                .obterRegistrosDiaQuatorze(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 15) {
             registros
-                .obterRegistrosDiaQuinze(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 16) {
             registros
-                .obterRegistrosDiaDezesseis(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 17) {
             registros
-                .obterRegistrosDiaDezessete(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 18) {
             registros
-                .obterRegistrosDiaDezoito(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 19) {
             registros
-                .obterRegistrosDiaDezenove(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 20) {
             registros
-                .obterRegistrosDiaVinte(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 21) {
             registros
-                .obterRegistrosDiaVinteUm(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 22) {
             registros
-                .obterRegistrosDiaVinteDois(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 23) {
             registros
-                .obterRegistrosDiaVinteTres(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 24) {
             registros
-                .obterRegistrosDiaVinteQuatro(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
                 return;
         } else 
         if(dia == 25) {
             registros
-                .obterRegistrosDiaVinteCinco(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
                 return;
         } else 
         if(dia == 26) {
             registros
-                .obterRegistrosDiaVinteSeis(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 27) {
             registros
-                .obterRegistrosDiaVinteSete(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 28) {
             registros
-                .obterRegistrosDiaVinteOito(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 29) {
             registros
-                .obterRegistrosDiaVinteNove(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 30) {
             registros
-                .obterRegistrosDiaTrinta(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 31) {
             registros
-                .obterRegistrosDiaTrinta_e_um(dia)
+            .obterRegistrosAgosto()
                 .then(listAll(dia))
                 .catch(catchError);
         } else {

@@ -21,6 +21,8 @@ class RegistroDiarioNovembroController {
 
         event.preventDefault();
 
+        this._compras.esvazia();
+
         const dia = this._inputDiaNovembro.value;
 
         let listAll = dia => registros => {
@@ -38,83 +40,83 @@ class RegistroDiarioNovembroController {
                         this._mensagemViewError.update(this._mensagem);}
 
 
-        let registros = new RegistrosDiarioService();
+        let registros = new RegistrosService();
 
         if(dia == 1) {
             registros
-                .obterRegistrosDiaPrimeiro(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 2) {
             registros
-                .obterRegistrosDiaDois(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 3) {
             registros
-                .obterRegistrosDiaTres(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 4) {
             registros
-                .obterRegistrosDiaQuatro(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 5) {
             registros
-                .obterRegistrosDiaCinco(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 6) {
             registros
-                .obterRegistrosDiaSeis(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 7) {
             registros
-                .obterRegistrosDiaSete(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 8) {
             registros
-                .obterRegistrosDiaOito(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 9) {
             registros
-                .obterRegistrosDiaNove(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 10) {
             registros
-                .obterRegistrosDiaDez(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 11) {
             registros
-                .obterRegistrosDiaOnze(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 12) {
             registros
-                .obterRegistrosDiaDoze(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 13) {
             registros
-                .obterRegistrosDiaTreze(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
@@ -126,105 +128,105 @@ class RegistroDiarioNovembroController {
         } else 
         if(dia == 15) {
             registros
-                .obterRegistrosDiaQuinze(dia)
+                .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 16) {
             registros
-                .obterRegistrosDiaDezesseis(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 17) {
             registros
-                .obterRegistrosDiaDezessete(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 18) {
             registros
-                .obterRegistrosDiaDezoito(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 19) {
             registros
-                .obterRegistrosDiaDezenove(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 20) {
             registros
-                .obterRegistrosDiaVinte(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 21) {
             registros
-                .obterRegistrosDiaVinteUm(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 22) {
             registros
-                .obterRegistrosDiaVinteDois(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 23) {
             registros
-                .obterRegistrosDiaVinteTres(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 24) {
             registros
-                .obterRegistrosDiaVinteQuatro(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
                 return;
         } else 
         if(dia == 25) {
             registros
-                .obterRegistrosDiaVinteCinco(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
                 return;
         } else 
         if(dia == 26) {
             registros
-                .obterRegistrosDiaVinteSeis(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 27) {
             registros
-                .obterRegistrosDiaVinteSete(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 28) {
             registros
-                .obterRegistrosDiaVinteOito(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 29) {
             registros
-                .obterRegistrosDiaVinteNove(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 30) {
             registros
-                .obterRegistrosDiaTrinta(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else 
         if(dia == 31) {
             registros
-                .obterRegistrosDiaTrinta_e_um(dia)
+            .obterRegistrosNovembro()
                 .then(listAll(dia))
                 .catch(catchError);
         } else {

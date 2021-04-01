@@ -57,6 +57,13 @@
     padding-top: 0.5em;
 }
 
+/****** Tabela ********/
+
+.tarefas__pesquisa {
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
 /******* Tabela Periodos **************/
 
 .container_card_agua {
@@ -86,6 +93,12 @@
 .tabela_conteudo {
     position: relative;
     bottom: 1em;
+}
+
+.lixeira {
+    position: relative;
+    left: 10px;
+    cursor: pointer;
 }
 
 .semana {

@@ -99,7 +99,7 @@
                         <tr>
                             <td><a href="#" onclick="tarefaController.importaRegistrosNovembro()">Novembro</a></td>
                             <input type="number" id="periodo_dia_novembro" class="periodo_dia" />
-                            <button onclick="registroDiarioNovrmbroController.importaRegistros()" class="btn-inserirDia" type="button">
+                            <button onclick="registroDiarioNovembroController.importaRegistros()" class="btn-inserirDia" type="button">
                                 <i class="fas fa-search"></i>
                             </button>
                         </tr>
@@ -113,7 +113,11 @@
                     </div>
                 </div>
                 <div class="tarefas">
-                    <h1>COMPRAS DO PERÍODO</h1>
+                    <div>
+                        <h1>COMPRAS DO PERÍODO</h1>
+                        <input type="search" id="pesquisa" class="tarefas__pesquisa" placeholder="pesquise ...">
+                        <i class="fas fa-search"></i>
+                    </div>
                     <div id="mensagemView"></div>
                     <form>
                         <div id="tarefaView"></div>
@@ -129,31 +133,31 @@
                             <div class="semana">
                                 <div class="subCardSemana">
                                     <div class="cardSemana">
-                                        <input class="input_semana" type="checkbox" value="Domingo" />
+                                        <input class="input_semana" type="checkbox" value="Domingo" required />
                                         <span>D</span>
                                     </div>
                                     <div class="cardSemana">
-                                        <input class="input_semana" type="checkbox" value="Segunda" />
+                                        <input class="input_semana" type="checkbox" value="Segunda" required />
                                         <span>S</span>
                                     </div>
                                     <div class="cardSemana">
-                                        <input class="input_semana" type="checkbox" value="Terça" />
+                                        <input class="input_semana" type="checkbox" value="Terça" required />
                                         <span>T</span>
                                     </div>
                                     <div class="cardSemana">
-                                        <input class="input_semana" type="checkbox" value="Quarta" />
+                                        <input class="input_semana" type="checkbox" value="Quarta" required />
                                         <span>Q</span>
                                     </div>
                                     <div class="cardSemana">
-                                        <input class="input_semana" type="checkbox" value="Quinta" />
+                                        <input class="input_semana" type="checkbox" value="Quinta" required />
                                         <span>Q</span>
                                     </div>
                                     <div class="cardSemana">
-                                        <input class="input_semana" type="checkbox" value="Sexta" />
+                                        <input class="input_semana" type="checkbox" value="Sexta" required />
                                         <span>S</span>
                                     </div>
                                     <div class="cardSemana">
-                                        <input class="input_semana" type="checkbox" value="Sábado" />
+                                        <input class="input_semana" type="checkbox" value="Sábado" required />
                                         <span>S</span>
                                     </div>
                                 </div>
@@ -205,11 +209,14 @@
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
         crossorigin="anonymous">
         </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.3.1/jquery.quicksearch.js"></script>
 
         <!-- JS scripts -->
         <script src='./js/app/models/Compra.js'></script>
         <script src='./js/app/helpers/DateHelper.js'></script>
         <script src='./js/app/helpers/checkbox-helper.js'></script>
+        <script src="./js/app/helpers/search-helper.js"></script>
         <script src='./js/app/models/ArrayCompras.js'></script>
         <script src='./js/app/controllers/TarefaController.js'></script>
         <script src='./js/app/controllers/RegistroDiarioJaneiroController.js'></script>
@@ -230,7 +237,6 @@
         <script src='./js/app/views/MensagemViewError.js'></script>
         <script src='./js/app/services/HttpService.js'></script>
         <script src='./js/app/services/RegistrosService.js'></script>
-        <script src='./js/app/services/RegistrosDiarioService.js'></script>
         <script>
 
             let tarefaController = new TarefaController();
@@ -264,7 +270,6 @@
                 registroDiarioOutubroController.apaga();
                 registroDiarioNovembroController.apaga();
                 registroDiarioDezembroController.apaga();
-                
 
             });
 

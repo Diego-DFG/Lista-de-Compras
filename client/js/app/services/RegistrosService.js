@@ -15,6 +15,17 @@ class RegistrosService {
 				});
 	}
 
+	excluiRegistros(id) {
+
+		return this._http
+				.delete(`/registros/${id}`)
+				.then(() => console.log('Registro apagado com sucesso!'))
+				.catch(erro => {
+					console.log(erro);
+					throw new Error('Não foi possível adicionar o registro!');
+				});
+	}
+
 	obterRegistrosJan() {
 
 		return this._http
@@ -24,7 +35,7 @@ class RegistrosService {
          				new Compra(
 							new Date(objeto._data), 
 								objeto._semana, objeto._mercado, objeto._item, objeto._quantidade, 
-									objeto._valor,objeto._total)))
+									objeto._valor,objeto._total, objeto.id)))
 				.then(registros => {
 	                return registros.filter(registro => 
 	                   		 registro._data.getMonth() == 0);
@@ -44,7 +55,7 @@ class RegistrosService {
 						new Compra(
 							new Date(objeto._data), 
 								objeto._semana, objeto._mercado, objeto._item, objeto._quantidade, 
-									objeto._valor,objeto._total)))
+									objeto._valor,objeto._total, objeto.id)))
 				.then(registros => {
 	                return registros.filter(registro => 
 	                   		 registro._data.getMonth() == 1);
@@ -55,7 +66,7 @@ class RegistrosService {
 	            }); 
 	}
 
-	obterRegistrosMarço() {
+	obterRegistrosMarco() {
 
 		return this._http
 				.get('/registros')
@@ -64,7 +75,7 @@ class RegistrosService {
 						new Compra(
 							new Date(objeto._data), 
 								objeto._semana, objeto._mercado, objeto._item, objeto._quantidade, 
-									objeto._valor,objeto._total)))
+									objeto._valor,objeto._total, objeto.id)))
 				.then(registros => {
 	                return registros.filter(registro => 
 	                   		 registro._data.getMonth() == 2);
@@ -84,7 +95,7 @@ class RegistrosService {
 						new Compra(
 							new Date(objeto._data), 
 								objeto._semana, objeto._mercado, objeto._item, objeto._quantidade, 
-									objeto._valor,objeto._total)))
+									objeto._valor,objeto._total, objeto.id)))
 				.then(registros => {
 	                return registros.filter(registro => 
 	                   		 registro._data.getMonth() == 3);
@@ -104,7 +115,7 @@ class RegistrosService {
 						new Compra(
 							new Date(objeto._data), 
 								objeto._semana, objeto._mercado, objeto._item, objeto._quantidade, 
-									objeto._valor,objeto._total)))
+									objeto._valor,objeto._total, objeto.id)))
 				.then(registros => {
 	                return registros.filter(registro => 
 	                   		 registro._data.getMonth() == 4);
@@ -124,7 +135,7 @@ class RegistrosService {
 						new Compra(
 							new Date(objeto._data), 
 								objeto._semana, objeto._mercado, objeto._item, objeto._quantidade, 
-									objeto._valor,objeto._total)))
+									objeto._valor,objeto._total, objeto.id)))
 				.then(registros => {
 	                return registros.filter(registro => 
 	                   		 registro._data.getMonth() == 5);
@@ -144,7 +155,7 @@ class RegistrosService {
 						new Compra(
 							new Date(objeto._data), 
 								objeto._semana, objeto._mercado, objeto._item, objeto._quantidade, 
-									objeto._valor,objeto._total)))
+									objeto._valor,objeto._total, objeto.id)))
 				.then(registros => {
 	                return registros.filter(registro => 
 	                   		 registro._data.getMonth() == 6);
@@ -164,7 +175,7 @@ class RegistrosService {
 						new Compra(
 							new Date(objeto._data), 
 								objeto._semana, objeto._mercado, objeto._item, objeto._quantidade, 
-									objeto._valor,objeto._total)))
+									objeto._valor,objeto._total, objeto.id)))
 				.then(registros => {
 	                return registros.filter(registro => 
 	                   		 registro._data.getMonth() == 7);
@@ -184,7 +195,7 @@ class RegistrosService {
 						new Compra(
 							new Date(objeto._data), 
 								objeto._semana, objeto._mercado, objeto._item, objeto._quantidade, 
-									objeto._valor,objeto._total)))
+									objeto._valor,objeto._total, objeto.id)))
 				.then(registros => {
 	                return registros.filter(registro => 
 	                   		 registro._data.getMonth() == 8);
@@ -204,7 +215,7 @@ class RegistrosService {
 						new Compra(
 							new Date(objeto._data), 
 								objeto._semana, objeto._mercado, objeto._item, objeto._quantidade, 
-									objeto._valor,objeto._total)))
+									objeto._valor,objeto._total, objeto.id)))
 				.then(registros => {
 	                return registros.filter(registro => 
 	                   		 registro._data.getMonth() == 9);
@@ -224,7 +235,7 @@ class RegistrosService {
 						new Compra(
 							new Date(objeto._data), 
 								objeto._semana, objeto._mercado, objeto._item, objeto._quantidade, 
-									objeto._valor,objeto._total)))
+									objeto._valor,objeto._total, objeto.id)))
 				.then(registros => {
 	                return registros.filter(registro => 
 	                   		 registro._data.getMonth() == 10);
@@ -244,7 +255,7 @@ class RegistrosService {
 						new Compra(
 							new Date(objeto._data), 
 								objeto._semana, objeto._mercado, objeto._item, objeto._quantidade, 
-									objeto._valor,objeto._total)))
+									objeto._valor,objeto._total, objeto.id)))
 				.then(registros => {
 	                return registros.filter(registro => 
 	                   		 registro._data.getMonth() == 11);

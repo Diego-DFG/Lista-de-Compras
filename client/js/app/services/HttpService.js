@@ -25,5 +25,16 @@ class HttpService {
 	 		})
 	 		.then(res => this._handlerErrors(res));
 
-        }
+    }
+
+	delete(url, id) {
+		console.log(id);
+		return fetch(url, {
+			headers: {'Content-type' : 'application/json'},
+			method: 'delete',
+			body: JSON.stringify(id)
+		})
+		.then(res => this._handlerErrors(res));
+
+   }
 }

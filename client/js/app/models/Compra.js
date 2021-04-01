@@ -1,5 +1,5 @@
 class Compra {
-    constructor(data, semana, mercado, item, quantidade, valor, total) 
+    constructor(data, semana, mercado, item, quantidade, valor, total, id) 
     {
         this._data = new Date(data.getTime());
         this._semana = semana;
@@ -8,7 +8,12 @@ class Compra {
         this._quantidade = quantidade;
         this._valor = valor;
         this._total = total;
+        this._id = id;
         Object.freeze(this);
+    }
+
+    get id() {
+        return this._id;
     }
 
     get data() {

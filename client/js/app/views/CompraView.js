@@ -20,26 +20,31 @@ class CompraView {
                     <th>TOTAL(R$)</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="tabelaCorpo">
                 ${model.compras.map(compra => `
-                <tr>
-                    <td>${compra.data.getDate()}/
+                <tr class="trTabela" data-id="${compra.id}">
+                    <td class="tdData tdTabela">${compra.data.getDate()}/
                     ${compra.data.getMonth()+1}/
                     ${compra.data.getFullYear()} - 
                     ${compra.semana}</td>
-                    <td>${compra.mercado}</td>
-                    <td>${compra.item}</td>
-                    <td>${compra.quantidade}</td>
-                    <td>${compra.valor}</td>
-                    <td>${(compra.total).toFixed(2)}</td>
+                    <td class="tdMercado tdTabela">${compra.mercado}</td>
+                    <td class="tdItem tdTabela">${compra.item}</td>
+                    <td class="tdQuantidade tdTabela">${compra.quantidade}</td>
+                    <td class="tdValor tdTabela">${compra.valor}</td>
+                    <td class="tdTotal tdTabela">${(compra.total).toFixed(2)}
+                    <i onclick="tarefaController.deletaRegistro(event)" class="lixeira fas fa-trash-alt">
+                    </td>
                 </tr>
                 `).join('')}
             </tbody>
             <tfoot>
                 <td class="table text-uppercase table-active" colspan="5"><strong>Total Geral(R$)</strong></td>
-                <td class="table-active">${model.compras.reduce((total, n) => total + n.total, 0.0)}</td>
+                <td class="table-active">${model.compras.reduce((total, n) => total + n.total, 0.0).toFixed(2).replace('.', ',')}</td>
             </tfoot>
         </table>
+        <script>
+            let tarefaController = new TarefaController();
+        </script>
         `;
     }
 }
