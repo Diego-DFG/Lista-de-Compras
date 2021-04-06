@@ -87,6 +87,8 @@ class TarefaController {
 		}
 	}
 
+	
+
     importaRegistrosJaneiro() {
 
 		event.preventDefault();
@@ -97,13 +99,15 @@ class TarefaController {
 			.obterRegistrosJan()
 			.then(registros => {
 				console.log(registros);
-	            registros
-	                .forEach(registro => {
-						this._compras.adiciona(registro);
-						this._mensagem.texto = 'Tarefas importadas com sucesso!';
-			 			this._mensagemViewSuccess.update(this._mensagem);
-					})
-	        })
+				!this._compras.compras.some(compraExistente =>
+                    JSON.stringify(registros) == JSON.stringify(compraExistente))})
+			.then(registros => {
+				registros
+				.forEach(registro => {
+					this._compras.adiciona(registro);
+					this._mensagem.texto = 'Tarefas importadas com sucesso!';
+					 this._mensagemViewSuccess.update(this._mensagem);})
+			})
 	        .catch(erro => {
                 console.log(erro);
 				this._mensagem.texto = 'Não foi possível importar as tarefas!';

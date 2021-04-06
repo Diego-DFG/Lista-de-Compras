@@ -5,7 +5,7 @@ class HttpService {
 			console.log(res);
 			throw new Error(res.statusText);
 		}
-
+		console.log(res);
 		return res;
 	}
 
@@ -37,4 +37,33 @@ class HttpService {
 		.then(res => this._handlerErrors(res));
 
    }
+
+   getById(url, id) {
+	console.log(id);
+	return fetch(url, {
+		headers: {'Content-type' : 'application/json'},
+		method: 'get',
+		body: JSON.stringify(id)
+	})
+	.then(res => this._handlerErrors(res));
+
+	}
+
+	atualizaItem(id, data, semana, mercado, item, quantidade, valor) {
+		console.log(id);
+		return fetch(url, {
+			headers: {'Content-type' : 'application/json'},
+			method: 'put',
+			body: JSON.stringify({
+				id: id,
+				data: data,
+				semana: semana,
+				mercado: mercado,	
+				item: item,
+				quantidade: quantidade,
+				valor: valor
+			})
+		})
+		.then(res => this._handlerErrors(res));
+	}
 }

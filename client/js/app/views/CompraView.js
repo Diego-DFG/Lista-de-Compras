@@ -26,7 +26,7 @@ class CompraView {
                     <td class="tdData tdTabela">${compra.data.getDate()}/
                     ${compra.data.getMonth()+1}/
                     ${compra.data.getFullYear()} - 
-                    ${compra.semana}</td>
+                    ${compra.semana}<a href="index.html?id=${compra.id}">Editar</a></td>
                     <td class="tdMercado tdTabela">${compra.mercado}</td>
                     <td class="tdItem tdTabela">${compra.item}</td>
                     <td class="tdQuantidade tdTabela">${compra.quantidade}</td>
@@ -38,8 +38,10 @@ class CompraView {
                 `).join('')}
             </tbody>
             <tfoot>
+                <tr>
                 <td class="table text-uppercase table-active" colspan="5"><strong>Total Geral(R$)</strong></td>
                 <td class="table-active">${model.compras.reduce((total, n) => total + n.total, 0.0).toFixed(2).replace('.', ',')}</td>
+                </tr>
             </tfoot>
         </table>
         <script>

@@ -26,6 +26,36 @@ class RegistrosService {
 				});
 	}
 
+	editaRegistros(id) {
+
+		return this._http
+				.getById(`/registros/${id}`)
+				.then(dados => {
+					console.log(dados);
+					console.log('Registro atualizado com sucesso!');
+					return dados.json();
+				})
+				.catch(erro => {
+					console.log(erro);
+					throw new Error('Não foi possível atualizar o registro!');
+				});
+	}
+
+	atualizaRegistros(id, data, semana, mercado, item, quantidade, valor) {
+
+		return this._http
+				.atualizaItem(`/registros/${id}`, data, semana, mercado, item, quantidade, valor)
+				.then(dados => {
+					console.log(id);
+					console.log('Registro atualizado com sucesso!');
+					return dados.json();
+				})
+				.catch(erro => {
+					console.log(erro);
+					throw new Error('Não foi possível atualizar o registro!');
+				});
+	}
+
 	obterRegistrosJan() {
 
 		return this._http
@@ -77,8 +107,9 @@ class RegistrosService {
 								objeto._semana, objeto._mercado, objeto._item, objeto._quantidade, 
 									objeto._valor,objeto._total, objeto.id)))
 				.then(registros => {
-	                return registros.filter(registro => 
-	                   		 registro._data.getMonth() == 2);
+	                return registros
+							.filter(registro => 
+	                   		 	registro._data.getMonth() == 2)
 				})
 	            .catch(erro => {
 	                console.log(erro);
@@ -108,22 +139,26 @@ class RegistrosService {
 
 	obterRegistrosMaio() {
 
-		return this._http
+		return new Promise((resolve, reject) => {
+
+			this._http
 				.get('/registros')
 				.then(registros => 
-         			registros.map(objeto => 
+         			resolve(registros.map(objeto => 
 						new Compra(
 							new Date(objeto._data), 
 								objeto._semana, objeto._mercado, objeto._item, objeto._quantidade, 
-									objeto._valor,objeto._total, objeto.id)))
+									objeto._valor,objeto._total, objeto.id))))
 				.then(registros => {
 	                return registros.filter(registro => 
 	                   		 registro._data.getMonth() == 4);
 				})
 	            .catch(erro => {
 	                console.log(erro);
-	                throw new Error('Não foi possível obter os registros!');
+	                reject('Não foi possível obter os registros!');
 	            }); 
+
+		}); 
 	}
 	
 	obterRegistrosJunho() {
